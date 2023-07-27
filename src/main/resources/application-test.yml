@@ -10,7 +10,7 @@ spring:
   autoconfigure:
     exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
   datasource:
-    url: jdbc:mysql://localhost:3306/flowable_study?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&useSSL=false
+    url: jdbc:mysql://47.113.147.111:3306/flowable_study?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&useSSL=false
     username: root
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
@@ -64,3 +64,14 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     call-setters-on-nulls: true
 
+flowable:
+  check-process-definitions: false
+  process-definition-location-prefix: classpath*:/processes/
+  process-definition-location-suffixes: "**.bpmn20.xml,**.bpmn"
+  database-schema-update: true
+
+
+logging:
+  level:
+    org:
+      flowable: debug
