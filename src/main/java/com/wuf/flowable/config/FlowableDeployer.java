@@ -37,7 +37,7 @@ public class FlowableDeployer {
      */
     public void deploy(String deploymentName, String resourceName) throws Exception {
         // 从classpath中加载流程定义文件
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(resourceName + ".bpmn20.xml");
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("processes/"+resourceName + ".bpmn20.xml");
         if (inputStream == null) {
             throw new IllegalArgumentException("找不到流程定义文件：" + resourceName);
         }
