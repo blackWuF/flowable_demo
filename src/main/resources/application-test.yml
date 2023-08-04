@@ -67,13 +67,15 @@ mybatis-plus:
 ## flowable.check-process-definitions：表示在项目启动的时候，去检查文件目录是否有对应的流程文件，默认值为 true 表示如果有流程文件就自动部署，false 表示不检查，那么也就不会自动部署
 #flowable.process-definition-location-prefix：这个是流程文件的位置，默认就是 classpath*:/processes/，当然开发者也可以进行配置
 #flowable.process-definition-location-suffixes：这个是流程文件的后缀，默认有两个，分别是 **.bpmn20.xml 和 **.bpmn，当然开发者也可以进行配置
-
+flowable:
   check-process-definitions: true
   process-definition-location-prefix: classpath*:/processes/
 #  process-definition-location-suffixes:
 #    - **.bpmn
 #    - **.bpmn20.xml
   database-schema-update: true
+  idm:
+    password-encoder: spring_delegating
 
 
 logging:

@@ -1,5 +1,6 @@
 package com.wuf.flowable.controller;
 
+import com.wuf.flowable.pojo.vo.ApproveRejectVO;
 import com.wuf.flowable.pojo.vo.AskForLeaveVO;
 import com.wuf.flowable.result.SysResult;
 import com.wuf.flowable.service.AskForLeaveService;
@@ -36,5 +37,12 @@ public class AskForLeaveController {
     @GetMapping("/list")
     public SysResult leaveList() {
         return SysResult.ok(askForLeaveService.leaveList());
+    }
+
+
+    @PostMapping("/handler")
+    public SysResult askForLeaveHandler(@RequestBody ApproveRejectVO approveRejectVO) {
+        askForLeaveService.askForLeaveHandler(approveRejectVO);
+        return SysResult.ok();
     }
 }
